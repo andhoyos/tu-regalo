@@ -8,8 +8,11 @@ console.log(end)
 
 function downloadBtn() {
     const download = document.getElementById("download");
-   
-    download.click();
+    const subMensaje = document.getElementById("subMensaje");
+    btnRegalo.textContent = 'Mi trabajo aqui esta hecho'
+    subMensaje.textContent = 'Que tengas un lindo día y espero que disfrutes tu regalo. '
+    // download.click();
+    
   }
 
 function diasHasta(){ 
@@ -26,7 +29,13 @@ const btnRegalo = document.getElementById('btn-regalo')
 const mensaje = document.getElementById('mensaje')
 const run = () => {
     diasHasta()
-    btnRegalo.textContent = `Podrás encontrar tu regalo en ${res} días`
+
+    if (res<=1){
+        res='mañana'
+    }else{
+        res='en '+ res+' días'
+    }
+    btnRegalo.textContent = `Podrás encontrar tu regalo ${res}`
     mensaje.textContent = `Preciosa está cerca tu cumpleaños!`
 jsConfetti.addConfetti({
     emojis: ['🦄','🌈', '⚡️', '💥', '✨', '💫', '🌸'],
